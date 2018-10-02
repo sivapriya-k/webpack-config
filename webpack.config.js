@@ -14,7 +14,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx.js$/,
+                test: /\.(jsx|js)$/,
                 loader: 'babel-loader',
                 query: {
                     presets: ['es2015']
@@ -33,6 +33,16 @@ module.exports = {
                 use: [{
                     loader: 'url-loader',
                     options: {
+                        name: '/img/[name].[ext]'
+                    }
+                }]
+            },
+            {
+                test: /\.svg$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 1048576, // Convert images < 1MB to base64 strings
                         name: '/img/[name].[ext]'
                     }
                 }]
