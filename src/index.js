@@ -1,4 +1,5 @@
 import './styles.scss';
+import home from './img/home.png';
 
 function component() {
     var element = document.createElement('div');
@@ -9,4 +10,12 @@ function component() {
     return element;
 }
 
+function img() {
+    var element = document.createElement('img');
+
+    element.src = home;
+    return element;
+}
+
 document.body.appendChild(component());
+document.body.appendChild(img());

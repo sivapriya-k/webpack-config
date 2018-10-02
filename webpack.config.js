@@ -27,6 +27,15 @@ module.exports = {
                     'css-loader',
                     'sass-loader'
                 ]
+            },
+            {
+                test: /\.(png|jp(e*)g|gif)$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        name: '/img/[name].[ext]'
+                    }
+                }]
             }
         ]
     },
